@@ -1,0 +1,931 @@
+/* 
+ * Estilos generales para toda la página 
+ * Define la fuente base, márgenes y colores de fondo
+ */
+body {
+    font-family: "Outfit", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #4b70f564;
+    color: #333;
+}
+
+/* Contenedor principal que ocupa toda la altura de la ventana */
+.dashboard-container {
+    display: grid;
+    min-height: 100vh;
+}
+
+/* ============ ESTILOS PARA LA BARRA DE NAVEGACIÓN ============ */
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #402E7A;
+    padding: 20px;
+}
+
+/* Logo en la navegación */
+.nav-izquierda img {
+    max-height: 60px;
+    margin-bottom: 15px;
+}
+
+/* Centro de la navegación (título y subtítulo) */
+.nav-centro {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.nav-centro h2 {
+    color: #ffffff;
+    font-size: 28px;
+    margin: 0;
+}
+
+.nav-centro p {
+    color: #ffffff;
+    font-size: 18px;
+    margin: 10px 0 0;
+}
+
+/* Sección derecha de la navegación (botón) */
+.nav-derecha {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Espacio entre botones */
+}
+
+/* Estilos del botón "Mis Reservas" */
+#btn-nav {
+    background: transparent;
+    color: #ffffff;
+    background: #4B70F5;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border-radius: 10px;
+    transition: .4s;
+    cursor: pointer;
+    font-size: 10px;
+    box-shadow: 0 1px 10px 1px #ffffff;
+    border: transparent;
+}
+/* Estilos del botón "Inicio" */
+.btn-inicio {
+    text-decoration: none;
+    color: white;
+    background: #4B70F5;
+    padding: 15px 50px;
+    margin: 10px 5px;
+    border-radius: 10px;
+    font-size: 20px;
+    box-shadow: 0 1px 10px 1px #ffffff;
+    border: none;
+    transition: .4s;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn-inicio:hover {
+    background: #3DC2EC;
+    color: #402E7A;
+}
+
+
+
+#btn-nav:hover {
+    background: #3DC2EC;
+    color: #402E7A;
+    border-radius: 10px;
+}
+
+/* ============ ESTILOS PARA LAS TARJETAS DE HABITACIONES ============ */
+.habitaciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background: #ffffff;
+}
+
+/* Estilo individual de cada tarjeta de habitación */
+.card-hab {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 12px;
+    max-width: 320px;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    padding: 0;
+    text-align: left;
+    transition: transform 0.2s ease;
+}
+
+/* Imagen de la habitación */
+.card-hab img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* 🔥 Clave para que la imagen se vea completa */
+    display: block;
+}
+
+/* Título de la habitación */
+.card-hab h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #402E7A;
+    margin: 15px 20px 10px;
+}
+
+.card-hab p {
+  font-size: 15px;
+  margin: 6px 20px;
+  color: #333;
+}
+
+/* Lista de características */
+.card-hab ul {
+    list-style: none;
+    margin: 10px 20px;
+    padding: 0;
+}
+
+.card-hab ul li {
+    font-size: 15px;
+    color: #555;
+    margin: 4px 0;
+}
+
+/* Estilos para el precio */
+.card-hab .precio {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 20px 15px;
+  color: #000;
+}
+
+
+.card-hab .precio span {
+  font-weight: normal;
+  color: #777;
+  font-size: 13px;
+}
+
+.card-hab .btn-reservar {
+  display: block;
+  width: calc(100% - 40px);
+  margin: 10px auto 20px;
+  background: #402E7A;
+  color: white;
+  padding: 12px 0;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-align: center;
+}
+
+.card-hab .btn-reservar:hover {
+  background-color: #4B70F5;
+}
+
+/* ============ ESTILOS PARA EL CONTENIDO PRINCIPAL ============ */
+.main-content {
+    padding: 20px;
+}
+
+/* Encabezado del contenido principal */
+.header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    color: #4B70F5;
+    margin: 0;
+    font-size: 24px;
+}
+
+.header p {
+    color: #000000;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+/* ============ ESTILOS PARA EL FORMULARIO DE RESERVAS ============ */
+.reserva-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Secciones del formulario */
+.form-seccion {
+    margin-bottom: 20px;
+}
+
+.form-seccion h3 {
+    color: #4B70F5;
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+/* Grupos de campos del formulario */
+.form-grupo {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.form-grupo label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Campos de entrada */
+.form-grupo input, 
+.form-grupo select, 
+.form-grupo textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.form-grupo textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Estilos para servicos en el formulario*/
+.servicios-container {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 5px;
+    background: #f9f9f9;
+}
+
+.servicio-option {
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+.servicio-option input[type="checkbox"] {
+    margin-right: 10px;
+    width: auto;
+    transform: scale(1.2);
+}
+
+.servicio-option label {
+    cursor: pointer;
+    font-weight: normal;
+    color: #555;
+}
+
+.servicio-option:hover label {
+    color: #4B70F5;
+}
+
+/* Estilos para botones */
+.btn {
+    font-size: 16px;
+    background: transparent;
+    color: #402E7A;
+    border: 3px solid #4B70F5;
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: .4s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #4B70F5;
+    color: #ffffff;
+    border: 3px solid #3DC2EC;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* ============ ESTILOS PARA VALIDACIONES ============ */
+.error {
+    color: #e74c3c;
+    font-size: 13px;
+    margin-top: 5px;
+    font-weight: 500;
+    display: block;
+}
+
+.input-error {
+    border: 2px solid #e74c3c !important;
+    background-color: #fdecea !important;
+}
+
+/* ============ ESTILOS PARA NOTIFICACIONES ============ */
+.notificacion {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 1000;
+    animation: slideIn 0.5s ease, fadeOut 0.5s ease 9.5s forwards;
+    display: flex;
+    align-items: center;
+    color: white;
+    max-width: 350px;
+    opacity: 0;
+    transform: translate(-50%, 100%);
+}
+
+.notificacion.exito {
+    background: #27ae60;
+    border-left: 5px solid #2ecc71;
+}
+
+.notificacion.error {
+    background: #e74c3c;
+    border-left: 5px solid #c0392b;
+}
+
+.notificacion.info {
+    background: #3498db;
+    border-left: 5px solid #2980b9;
+}
+
+/* Iconos para notificaciones */
+.notificacion::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.notificacion.exito::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z'/%3E%3C/svg%3E");
+}
+
+.notificacion.error::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z'/%3E%3C/svg%3E");
+}
+
+/* Animaciones para notificaciones */
+@keyframes slideIn {
+    0% {
+        transform: translate(-50%, 100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+    to {
+        transform: translate(-50%, 100%);
+        opacity: 0;
+    }
+}
+
+/* ============ ESTILOS ADICIONALES ============ */
+/* Precio total estimado */
+.precio-total {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: center;
+    border: 1px solid #dee2e6;
+}
+
+.precio-total strong {
+    font-size: 18px;
+    color: #402E7A;
+}
+
+.precio-total small {
+    display: block;
+    font-size: 14px;
+    color: #6c757d;
+    margin-top: 5px;
+}
+
+/* Indicador de carga */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 10px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Nota sobre la base de datos */
+.nota-bdd {
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Elementos del historial de reservas */
+.reserva-item {
+  background: #fdfdfd;
+  border-left: 5px solid #4B70F5;
+  padding: 20px 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 20px rgba(75, 112, 245, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: left;
+}
+
+.reserva-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(75, 112, 245, 0.15);
+}
+
+.reserva-item h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-size: 22px;
+    text-align: left;
+}
+
+.reserva-item p {
+    margin: 6px 0;
+    font-size: 15px;
+    color: #444;
+    text-align: left;
+}
+
+.botones-reserva {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+}
+
+.btn-eliminar,
+.btn-descargar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-eliminar {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-eliminar:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+.btn-descargar {
+  background-color: #27ae60;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-descargar:hover {
+  background-color: #1e874b;
+  transform: translateY(-2px);
+}
+
+.btn-editar {
+    background-color: #ffc107; /* Amarillo */
+    color: #212529;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-editar:hover {
+    background-color: #e0a800;
+}
+
+
+
+/* ============ ESTILOS PARA EL MODAL HISTORIAL ============ */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 35px 40px;
+    border-radius: 16px;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    animation: fadeIn 0.3s ease;
+    font-family: "Outfit", sans-serif;
+}
+
+.close-modal {
+    float: right;
+    cursor: pointer;
+    font-size: 1.6rem;
+    color: #999;
+    transition: color 0.2s;
+}
+
+.close-modal:hover {
+    color: #e74c3c;
+}
+
+.historial-contenedor {
+  margin-top: 30px;
+}
+
+.historial-contenedor p {
+    font-style: italic;
+    color: #888;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 16px;
+}
+
+
+
+
+
+/* ========== MODAL CONFIRMACIÓN DE RESERVA ========== */
+
+.modal-confirmacion-reserva {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: #402e7a3e;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-confirmacion-reserva .modal-contenido {
+  background: white;
+  display: flex;
+  flex-direction: row;
+  width: 85%;
+  max-width: 1000px;
+  height: 80%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px #402e7a80;
+  position: relative;
+}
+
+.modal-confirmacion-reserva .modal-izquierda,
+.modal-confirmacion-reserva .modal-derecha {
+  width: 50%;
+  padding: 30px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.modal-confirmacion-reserva .modal-izquierda {
+  background-color: #4b70f500;
+  border-right: 1px solid #e0e0e0;
+}
+
+.modal-confirmacion-reserva .modal-izquierda h2 {
+  margin-bottom: 60px;
+  color: #402E7A;
+  text-align: center;
+}
+
+.modal-confirmacion-reserva .modal-derecha h2{
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: #402E7A 0px 1px 1px;
+}
+
+.modal-confirmacion-reserva .modal-derecha p{
+    margin-bottom: 25px;
+    color: #ffffff;
+    text-align: left;
+    text-shadow: #402E7A 0px 1px 1px;
+    font-size: 18px;
+}
+
+.modal-confirmacion-reserva .modal-izquierda p{
+    margin-bottom: 25px;
+    color: #402E7A;
+    text-align: left;
+}
+
+.modal-confirmacion-reserva .modal-derecha {
+  text-align: left;
+  background: url("../img/imgReservas/backgroudConfirmacion.png");
+}
+
+.modal-confirmacion-reserva .modal-derecha img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+
+
+.modal-confirmacion-reserva .modal-footer {
+  position: absolute;
+  bottom: 120px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 0px;
+}
+
+.modal-confirmacion-reserva .btn-confirmar{
+  padding: 15px 24px;
+  font-size: 18px;
+  margin-right: 12%;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;  
+}
+
+.modal-confirmacion-reserva .btn-cancelar {
+position: absolute;
+right: 40.2%;
+  padding: 15px 48px;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+
+.modal-confirmacion-reserva .btn-confirmar {
+  background: #42A5F0;
+  color: white;
+}
+
+.modal-confirmacion-reserva .btn-confirmar:hover {
+  background: #3583BE;
+}
+
+.modal-confirmacion-reserva .btn-cancelar {
+  background-color: #ffffff;
+  color: #402E7A;
+}
+
+.modal-confirmacion-reserva .btn-cancelar:hover {
+  background-color: #c3dbfa;
+}
+
+/* Scroll personalizado */
+.modal-confirmacion-reserva .modal-izquierda::-webkit-scrollbar,
+.modal-confirmacion-reserva .modal-derecha::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-confirmacion-reserva .modal-izquierda::-webkit-scrollbar-thumb,
+.modal-confirmacion-reserva .modal-derecha::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 3px;
+}
+
+
+
+.btn-recibo {
+  background-color: #0066cc;
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-recibo:hover {
+  background-color: #004c99;
+}
+
+
+.estado-confirmada {
+  background: #2ecc71;
+  color: white;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.estado-pendiente {
+  background: #f39c12;
+  color: white;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.estado-cancelada {
+  background: #e74c3c;
+  color: white;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+/* ============ MEDIA QUERIES PARA DISPOSITIVOS MÁS GRANDES ============ */
+@media (min-width: 768px) {
+    /* Navegación en fila para pantallas grandes */
+    .nav {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 30px 50px;
+    }
+
+    .nav-izquierda img {
+        margin-bottom: 0;
+        max-height: 80px;
+    }
+
+    .nav-centro {
+        margin-bottom: 0;
+    }
+
+    .nav-centro h2 {
+        font-size: 36px;
+    }
+
+    .nav-centro p {
+        font-size: 23px;
+    }
+
+    #btn-nav {
+        padding: 12px 30px;
+        font-size: 22px;
+    }
+
+    /* Tarjetas de habitaciones más grandes */
+    .habitaciones {
+        padding: 40px;
+    }
+
+    .card-hab {
+        height: 600px;
+    }
+
+    .card-hab img {
+        height: 300px;
+    }
+
+    .card-hab h3 {
+        font-size: 25px;
+    }
+
+    .card-hab ul li {
+        font-size: 20px;
+    }
+
+    .btn-reservar {
+        font-size: 20px;
+        padding: 20px 50px;
+    }
+
+    /* Contenido principal más grande */
+    .main-content {
+        padding: 30px;
+    }
+
+    .header h1 {
+        font-size: 32px;
+    }
+
+    .header p {
+        font-size: 20px;
+    }
+
+    /* Formulario más ancho */
+    .reserva-form {
+        padding: 25px;
+        max-width: 1000px;
+    }
+
+    .form-seccion h3 {
+        font-size: 23px;
+    }
+
+    .btn {
+        font-size: 18px;
+        padding: 14px 40px;
+    }
+
+    select {
+        font-size: 16px !important;
+    }
+
+    .servicio-option {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 992px) {
+    .reserva-form {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 767px) {
+  .modal-confirmacion-reserva .modal-contenido {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+  }
+
+  .modal-confirmacion-reserva .modal-izquierda,
+  .modal-confirmacion-reserva .modal-derecha {
+    width: 100%;
+    padding: 20px;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .modal-confirmacion-reserva .modal-derecha {
+    background-size: cover;
+    border-bottom: none;
+  }
+
+  .modal-confirmacion-reserva .modal-footer {
+    flex-direction: column;
+    gap: 10px;
+    bottom: 20px;
+    position: relative;
+    width: auto;
+  }
+
+  .modal-confirmacion-reserva .btn-cancelar,
+  .modal-confirmacion-reserva .btn-confirmar {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+

@@ -1,0 +1,287 @@
+/* Variables globales */
+:root {
+    --primary: #4a47a3;
+    --secondary: #6c63ff;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --success: #28a745;
+    --sidebar-bg: #402E7A;
+}
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+/* ==================== BARRA LATERAL ==================== */
+.barra-lateral {
+    background-color: var(--sidebar-bg);
+    color: white;
+    padding: 20px;
+    min-width: 250px;
+    transition: all 0.3s;
+}
+
+.barra-lateral h2 {
+    color: #ecf0f1;
+    padding-bottom: 10px;
+}
+
+/* Elementos del menú */
+.menu-item, .logout {
+    padding: 12px 15px;
+    margin: 20px 0;
+    cursor: pointer;
+    background: transparent;
+    transition: all 0.3s;
+    color: #ffffff;
+    border-radius: 8px;
+    font-size: 18px;
+    border: 1px solid transparent;
+    font-weight: 400;
+    display: block;
+    text-decoration: none;
+}
+
+.logout {
+    margin-top: auto; /* Posiciona el logout al final */
+}
+
+.menu-item:hover, .logout:hover {
+    box-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
+}
+
+/* Menú desplegable de usuarios */
+.usu {
+    position: relative;
+    display: block;
+}
+
+.usu button {
+    padding: 12px 20px;
+    background: transparent;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+.usu-contenido {
+    display: none;
+    position: relative;
+    background: var(--sidebar-bg);
+    border-radius: 6px;
+    margin-top: 5px;
+}
+
+.usu-contenido a {
+    display: block;
+    padding: 10px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.usu-contenido a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.usu:hover .usu-contenido {
+    display: block;
+}
+
+/* ==================== CONTENIDO PRINCIPAL ==================== */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto; /* Para contenido que exceda el ancho */
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    background-color: var(--secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* Sección de bienvenida */
+.welcome {
+    margin-bottom: 20px;
+}
+
+/* Contenedor del dashboard */
+.dashboard-content {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+/* ==================== ESTADÍSTICAS DE HABITACIONES ==================== */
+.room-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.room-category {
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.stat-box {
+    background-color: #f0f2ff;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+/* ==================== SECCIÓN DE RESERVAS ==================== */
+.reservas {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-top: 30px;
+}
+
+.reservas-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.chart-container {
+    position: relative;
+    height: 200px;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+/* Filtro de fechas */
+.date-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.date-filter input[type="date"],
+.date-filter button {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.date-filter button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.date-filter button:hover {
+    background-color: var(--secondary);
+}
+
+/* ==================== MEDIA QUERIES PARA RESPONSIVO ==================== */
+@media (max-width: 992px) {
+    body {
+        flex-direction: column;
+    }
+    
+    .barra-lateral {
+        width: 100%;
+        min-height: auto;
+        padding: 15px;
+    }
+    
+    .menu-item, .logout {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+    
+    .dashboard-content {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .room-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .date-filter {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .date-filter input,
+    .date-filter button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .profile {
+        margin-top: 10px;
+        width: 100%;
+        justify-content: flex-end;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
